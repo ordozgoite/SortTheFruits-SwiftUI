@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED02BF012B6591D7003065DE /* GuessTheOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF002B6591D7003065DE /* GuessTheOrderApp.swift */; };
+		ED02BF032B6591D7003065DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF022B6591D7003065DE /* ContentView.swift */; };
+		ED02BF052B6591D9003065DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF042B6591D9003065DE /* Assets.xcassets */; };
+		ED02BF082B6591D9003065DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF072B6591D9003065DE /* Preview Assets.xcassets */; };
+		ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF0E2B6591F6003065DE /* GameScreen.swift */; };
+		ED02BF112B659AF8003065DE /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF102B659AF8003065DE /* GameViewModel.swift */; };
+		ED02BF132B65A7F7003065DE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF122B65A7F7003065DE /* Sizes.swift */; };
+		ED02BF172B65D6B0003065DE /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF162B65D6B0003065DE /* Haptic.swift */; };
+		ED02BF1A2B65E4E2003065DE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ED02BF192B65E4E2003065DE /* Lottie */; };
+		ED02BF1C2B65E519003065DE /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF1B2B65E519003065DE /* confetti.json */; };
+		ED02BF1F2B65E538003065DE /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF1E2B65E538003065DE /* LottieView.swift */; };
+		ED02BF212B65E5BE003065DE /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF202B65E5BE003065DE /* SuccessView.swift */; };
+		ED02BF232B65E688003065DE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF222B65E688003065DE /* Background.swift */; };
+		ED02BF262B66F119003065DE /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF252B66F119003065DE /* CounterView.swift */; };
+		ED02BF282B66F179003065DE /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF272B66F179003065DE /* LevelView.swift */; };
+		ED02BF2A2B66F1FD003065DE /* FruitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF292B66F1FD003065DE /* FruitView.swift */; };
+		ED02BF2C2B66F296003065DE /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF2B2B66F296003065DE /* TutorialView.swift */; };
+		ED02BF392B66FEF4003065DE /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF2E2B66FEC6003065DE /* success.mp3 */; };
+		ED02BF3A2B66FEF4003065DE /* miss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF2F2B66FEC8003065DE /* miss.mp3 */; };
+		ED02BF3B2B66FEF4003065DE /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF302B66FECB003065DE /* 4.mp3 */; };
+		ED02BF3C2B66FEF4003065DE /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF312B66FED2003065DE /* 1.mp3 */; };
+		ED02BF3D2B66FEF4003065DE /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF322B66FED5003065DE /* 3.mp3 */; };
+		ED02BF3E2B66FEF4003065DE /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF332B66FEDC003065DE /* 5.mp3 */; };
+		ED02BF3F2B66FEF4003065DE /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF342B66FEE1003065DE /* 2.mp3 */; };
+		ED02BF402B66FEF4003065DE /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF352B66FEE8003065DE /* 9.mp3 */; };
+		ED02BF412B66FEF4003065DE /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF362B66FEEE003065DE /* 6.mp3 */; };
+		ED02BF422B66FEF4003065DE /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF372B66FEF2003065DE /* 7.mp3 */; };
+		ED02BF432B66FEF4003065DE /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF382B66FEF4003065DE /* 8.mp3 */; };
+		ED02BF462B6700B4003065DE /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF452B6700B4003065DE /* Fruit.swift */; };
+		ED02BF482B670E14003065DE /* theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF472B670E14003065DE /* theme.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ED02BEFD2B6591D7003065DE /* GuessTheOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED02BF002B6591D7003065DE /* GuessTheOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheOrderApp.swift; sourceTree = "<group>"; };
+		ED02BF022B6591D7003065DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED02BF042B6591D9003065DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED02BF072B6591D9003065DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED02BF0E2B6591F6003065DE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		ED02BF102B659AF8003065DE /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		ED02BF122B65A7F7003065DE /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		ED02BF162B65D6B0003065DE /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		ED02BF1B2B65E519003065DE /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		ED02BF1E2B65E538003065DE /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		ED02BF202B65E5BE003065DE /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		ED02BF222B65E688003065DE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		ED02BF252B66F119003065DE /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CounterView.swift; path = GuessTheOrder/Components/CounterView.swift; sourceTree = SOURCE_ROOT; };
+		ED02BF272B66F179003065DE /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		ED02BF292B66F1FD003065DE /* FruitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitView.swift; sourceTree = "<group>"; };
+		ED02BF2B2B66F296003065DE /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		ED02BF2E2B66FEC6003065DE /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		ED02BF2F2B66FEC8003065DE /* miss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = miss.mp3; sourceTree = "<group>"; };
+		ED02BF302B66FECB003065DE /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
+		ED02BF312B66FED2003065DE /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		ED02BF322B66FED5003065DE /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
+		ED02BF332B66FEDC003065DE /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
+		ED02BF342B66FEE1003065DE /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		ED02BF352B66FEE8003065DE /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
+		ED02BF362B66FEEE003065DE /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
+		ED02BF372B66FEF2003065DE /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
+		ED02BF382B66FEF4003065DE /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
+		ED02BF452B6700B4003065DE /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		ED02BF472B670E14003065DE /* theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theme.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED02BEFA2B6591D7003065DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED02BF1A2B65E4E2003065DE /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED02BEF42B6591D7003065DE = {
+			isa = PBXGroup;
+			children = (
+				ED02BEFF2B6591D7003065DE /* GuessTheOrder */,
+				ED02BEFE2B6591D7003065DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED02BEFE2B6591D7003065DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BEFD2B6591D7003065DE /* GuessTheOrder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED02BEFF2B6591D7003065DE /* GuessTheOrder */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF2D2B66FEB5003065DE /* Audio */,
+				ED02BF152B65D69C003065DE /* Util */,
+				ED02BF1D2B65E51E003065DE /* Components */,
+				ED02BF442B67009F003065DE /* Model */,
+				ED02BF142B65D687003065DE /* Screen */,
+				ED02BF002B6591D7003065DE /* GuessTheOrderApp.swift */,
+				ED02BF022B6591D7003065DE /* ContentView.swift */,
+				ED02BF042B6591D9003065DE /* Assets.xcassets */,
+				ED02BF1B2B65E519003065DE /* confetti.json */,
+				ED02BF062B6591D9003065DE /* Preview Content */,
+			);
+			path = GuessTheOrder;
+			sourceTree = "<group>";
+		};
+		ED02BF062B6591D9003065DE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF072B6591D9003065DE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED02BF142B65D687003065DE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF102B659AF8003065DE /* GameViewModel.swift */,
+				ED02BF0E2B6591F6003065DE /* GameScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		ED02BF152B65D69C003065DE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF122B65A7F7003065DE /* Sizes.swift */,
+				ED02BF162B65D6B0003065DE /* Haptic.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		ED02BF1D2B65E51E003065DE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF242B66F107003065DE /* Game */,
+				ED02BF1E2B65E538003065DE /* LottieView.swift */,
+				ED02BF202B65E5BE003065DE /* SuccessView.swift */,
+				ED02BF222B65E688003065DE /* Background.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ED02BF242B66F107003065DE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF252B66F119003065DE /* CounterView.swift */,
+				ED02BF272B66F179003065DE /* LevelView.swift */,
+				ED02BF292B66F1FD003065DE /* FruitView.swift */,
+				ED02BF2B2B66F296003065DE /* TutorialView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		ED02BF2D2B66FEB5003065DE /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF472B670E14003065DE /* theme.mp3 */,
+				ED02BF2F2B66FEC8003065DE /* miss.mp3 */,
+				ED02BF312B66FED2003065DE /* 1.mp3 */,
+				ED02BF342B66FEE1003065DE /* 2.mp3 */,
+				ED02BF322B66FED5003065DE /* 3.mp3 */,
+				ED02BF302B66FECB003065DE /* 4.mp3 */,
+				ED02BF332B66FEDC003065DE /* 5.mp3 */,
+				ED02BF362B66FEEE003065DE /* 6.mp3 */,
+				ED02BF372B66FEF2003065DE /* 7.mp3 */,
+				ED02BF382B66FEF4003065DE /* 8.mp3 */,
+				ED02BF352B66FEE8003065DE /* 9.mp3 */,
+				ED02BF2E2B66FEC6003065DE /* success.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		ED02BF442B67009F003065DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF452B6700B4003065DE /* Fruit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED02BEFC2B6591D7003065DE /* GuessTheOrder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED02BF0B2B6591D9003065DE /* Build configuration list for PBXNativeTarget "GuessTheOrder" */;
+			buildPhases = (
+				ED02BEF92B6591D7003065DE /* Sources */,
+				ED02BEFA2B6591D7003065DE /* Frameworks */,
+				ED02BEFB2B6591D7003065DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuessTheOrder;
+			packageProductDependencies = (
+				ED02BF192B65E4E2003065DE /* Lottie */,
+			);
+			productName = GuessTheOrder;
+			productReference = ED02BEFD2B6591D7003065DE /* GuessTheOrder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED02BEF52B6591D7003065DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					ED02BEFC2B6591D7003065DE = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = ED02BEF82B6591D7003065DE /* Build configuration list for PBXProject "GuessTheOrder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED02BEF42B6591D7003065DE;
+			packageReferences = (
+				ED02BF182B65E4E2003065DE /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
+			productRefGroup = ED02BEFE2B6591D7003065DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED02BEFC2B6591D7003065DE /* GuessTheOrder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED02BEFB2B6591D7003065DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED02BF402B66FEF4003065DE /* 9.mp3 in Resources */,
+				ED02BF412B66FEF4003065DE /* 6.mp3 in Resources */,
+				ED02BF1C2B65E519003065DE /* confetti.json in Resources */,
+				ED02BF082B6591D9003065DE /* Preview Assets.xcassets in Resources */,
+				ED02BF3E2B66FEF4003065DE /* 5.mp3 in Resources */,
+				ED02BF3D2B66FEF4003065DE /* 3.mp3 in Resources */,
+				ED02BF392B66FEF4003065DE /* success.mp3 in Resources */,
+				ED02BF3B2B66FEF4003065DE /* 4.mp3 in Resources */,
+				ED02BF3C2B66FEF4003065DE /* 1.mp3 in Resources */,
+				ED02BF3A2B66FEF4003065DE /* miss.mp3 in Resources */,
+				ED02BF052B6591D9003065DE /* Assets.xcassets in Resources */,
+				ED02BF432B66FEF4003065DE /* 8.mp3 in Resources */,
+				ED02BF422B66FEF4003065DE /* 7.mp3 in Resources */,
+				ED02BF482B670E14003065DE /* theme.mp3 in Resources */,
+				ED02BF3F2B66FEF4003065DE /* 2.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED02BEF92B6591D7003065DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED02BF212B65E5BE003065DE /* SuccessView.swift in Sources */,
+				ED02BF2C2B66F296003065DE /* TutorialView.swift in Sources */,
+				ED02BF172B65D6B0003065DE /* Haptic.swift in Sources */,
+				ED02BF112B659AF8003065DE /* GameViewModel.swift in Sources */,
+				ED02BF462B6700B4003065DE /* Fruit.swift in Sources */,
+				ED02BF2A2B66F1FD003065DE /* FruitView.swift in Sources */,
+				ED02BF132B65A7F7003065DE /* Sizes.swift in Sources */,
+				ED02BF032B6591D7003065DE /* ContentView.swift in Sources */,
+				ED02BF282B66F179003065DE /* LevelView.swift in Sources */,
+				ED02BF232B65E688003065DE /* Background.swift in Sources */,
+				ED02BF1F2B65E538003065DE /* LottieView.swift in Sources */,
+				ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */,
+				ED02BF012B6591D7003065DE /* GuessTheOrderApp.swift in Sources */,
+				ED02BF262B66F119003065DE /* CounterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ED02BF092B6591D9003065DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED02BF0A2B6591D9003065DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED02BF0C2B6591D9003065DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessTheOrder/Preview Content\"";
+				DEVELOPMENT_TEAM = 3945C3P68V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		ED02BF0D2B6591D9003065DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GuessTheOrder/Preview Content\"";
+				DEVELOPMENT_TEAM = 3945C3P68V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED02BEF82B6591D7003065DE /* Build configuration list for PBXProject "GuessTheOrder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED02BF092B6591D9003065DE /* Debug */,
+				ED02BF0A2B6591D9003065DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED02BF0B2B6591D9003065DE /* Build configuration list for PBXNativeTarget "GuessTheOrder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED02BF0C2B6591D9003065DE /* Debug */,
+				ED02BF0D2B6591D9003065DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED02BF182B65E4E2003065DE /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED02BF192B65E4E2003065DE /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED02BF182B65E4E2003065DE /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = ED02BEF52B6591D7003065DE /* Project object */;
+}
