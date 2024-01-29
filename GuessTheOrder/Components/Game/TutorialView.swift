@@ -26,6 +26,12 @@ struct TutorialView: View {
             return "Try to guess the order of the Fruits"
         } else if gameVM.level == 5 {
             return "The amount of fruits increases as you progress to higher levels."
+        } else if gameVM.level == 40 {
+            return "You're doing great! Let's make it harder!"
+        } else if gameVM.level == 70 {
+            return "Let's see if you candle 7 fruits 🤔"
+        } else if gameVM.level == 100 {
+            return "Congratulations for reach level 100 🎉"
         }
         return  ""
     }

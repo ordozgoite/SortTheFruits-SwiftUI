@@ -11,6 +11,7 @@ import AVFoundation
 class GameViewModel: ObservableObject {
     
     init() {
+//        UserDefaults.standard.set(150, forKey: "level")
         startGame()
     }
     
@@ -23,7 +24,22 @@ class GameViewModel: ObservableObject {
     @Published var showSuccessView: Bool = false
     @Published var swappedFruits: Bool = false
     
+    //Audio
     @Published var audioPlayer: AVAudioPlayer?
+    @Published var themeSongPlayer: AVAudioPlayer?
+    @Published var isMusicOn: Bool = true {
+        didSet {
+            if isMusicOn {
+                playThemeSong()
+            } else {
+                themeSongPlayer?.stop()
+            }
+        }
+    }
+    
+    // Settings
+    @Published var isFXOn: Bool = true
+    @Published var isSettingsViewDisplayed: Bool = false
     
     func swapElements(index1: Int, index2: Int) {
         if !swappedFruits { countFirstSwap() }
@@ -45,6 +61,7 @@ class GameViewModel: ObservableObject {
     }
     
     private func startGame() {
+        playThemeSong()
         loadLevel()
         prepareLevel()
     }
@@ -90,7 +107,7 @@ class GameViewModel: ObservableObject {
     }
     
     private func saveLevel() {
-        UserDefaults.standard.set(level, forKey: "level")
+        
     }
     
     private func loadLevel() {
@@ -122,16 +139,35 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    //MARK: - Audio 📣
+    
     func playAudio(_ audioName: String) {
-        guard let path = Bundle.main.path(forResource: audioName, ofType: "mp3") else {
+        if isFXOn {
+            guard let path = Bundle.main.path(forResource: audioName, ofType: "mp3") else {
+                print("Audio file not found")
+                return
+            }
+            
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                audioPlayer?.play()
+                print("🎶 Played sound \(audioName)")
+            } catch {
+                print("Error playing audio: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func playThemeSong() {
+        guard let path = Bundle.main.path(forResource: "theme", ofType: "mp3") else {
             print("Audio file not found")
             return
         }
-        
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer?.play()
-            print("🎶 Played sound \(audioName)")
+            themeSongPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            themeSongPlayer?.numberOfLoops = -1
+            themeSongPlayer?.prepareToPlay()
+            themeSongPlayer?.play()
         } catch {
             print("Error playing audio: \(error.localizedDescription)")
         }

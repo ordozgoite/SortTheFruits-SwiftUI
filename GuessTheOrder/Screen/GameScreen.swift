@@ -12,12 +12,11 @@ import AVFoundation
 struct GameScreen: View {
     
     @ObservedObject private var gameVM = GameViewModel()
-    @State private var themeSongPlayer: AVAudioPlayer?
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Background()
+                Background(gameVM: gameVM)
                 
                 Header()
                 
@@ -26,10 +25,9 @@ struct GameScreen: View {
                 TutorialText()
                 
                 SuccessAnimation(geometry: geometry)
+                
+                Settings()
             }
-        }
-        .onAppear {
-            playThemeSong()
         }
         .onChange(of: gameVM.fruitsOrder) { _ in
             if gameVM.correctCount == gameVM.fruitsOrder.count {
@@ -47,7 +45,17 @@ struct GameScreen: View {
             ZStack(alignment: .top) {
                 HStack {
                     LevelView(gameVM: gameVM)
+                    
                     Spacer()
+                    
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .foregroundStyle(.white)
+                        .onTapGesture {
+                            gameVM.isSettingsViewDisplayed.toggle()
+                        }
                 }
                 CounterView(gameVM: gameVM)
             }
@@ -92,23 +100,14 @@ struct GameScreen: View {
         }
     }
     
-    //MARK: - Auxiliary Methods
+    //MARK: - Settings View
     
-    private func playThemeSong() {
-        guard let path = Bundle.main.path(forResource: "theme", ofType: "mp3") else {
-            print("Audio file not found")
-            return
-        }
-        do {
-            themeSongPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            themeSongPlayer?.numberOfLoops = -1
-            themeSongPlayer?.prepareToPlay()
-            themeSongPlayer?.play()
-        } catch {
-            print("Error playing audio: \(error.localizedDescription)")
+    @ViewBuilder
+    private func Settings() -> some View {
+        if gameVM.isSettingsViewDisplayed {
+            SettingsView(gameVM: gameVM)
         }
     }
-    
 }
 
 #Preview {
