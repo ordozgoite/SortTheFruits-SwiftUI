@@ -40,6 +40,8 @@
 		ED480F772B67281E00DA4FD1 /* Octopus Game.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED480F762B67281900DA4FD1 /* Octopus Game.ttf */; };
 		ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F782B67284500DA4FD1 /* LaunchScreen.swift */; };
 		ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */; };
+		EDF230552B67FDB8002A27D8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EDF230542B67FDB8002A27D8 /* GoogleMobileAds */; };
+		EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF230562B67FDF4002A27D8 /* AdBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,7 @@
 		ED480F762B67281900DA4FD1 /* Octopus Game.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Octopus Game.ttf"; sourceTree = "<group>"; };
 		ED480F782B67284500DA4FD1 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EDF230562B67FDF4002A27D8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF230552B67FDB8002A27D8 /* GoogleMobileAds in Frameworks */,
 				ED02BF1A2B65E4E2003065DE /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +164,7 @@
 				ED02BF1E2B65E538003065DE /* LottieView.swift */,
 				ED02BF202B65E5BE003065DE /* SuccessView.swift */,
 				ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */,
+				EDF230562B67FDF4002A27D8 /* AdBannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			name = GuessTheOrder;
 			packageProductDependencies = (
 				ED02BF192B65E4E2003065DE /* Lottie */,
+				EDF230542B67FDB8002A27D8 /* GoogleMobileAds */,
 			);
 			productName = GuessTheOrder;
 			productReference = ED02BEFD2B6591D7003065DE /* GuessTheOrder.app */;
@@ -252,6 +258,7 @@
 			mainGroup = ED02BEF42B6591D7003065DE;
 			packageReferences = (
 				ED02BF182B65E4E2003065DE /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				EDF230532B67FDB8002A27D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = ED02BEFE2B6591D7003065DE /* Products */;
 			projectDirPath = "";
@@ -304,6 +311,7 @@
 				ED02BF032B6591D7003065DE /* ContentView.swift in Sources */,
 				ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */,
 				ED02BF282B66F179003065DE /* LevelView.swift in Sources */,
+				EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */,
 				ED02BF232B65E688003065DE /* Background.swift in Sources */,
 				ED02BF1F2B65E538003065DE /* LottieView.swift in Sources */,
 				ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */,
@@ -457,6 +465,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -490,6 +499,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -532,6 +542,14 @@
 				minimumVersion = 4.4.0;
 			};
 		};
+		EDF230532B67FDB8002A27D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -539,6 +557,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ED02BF182B65E4E2003065DE /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		EDF230542B67FDB8002A27D8 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDF230532B67FDB8002A27D8 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

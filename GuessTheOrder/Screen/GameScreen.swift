@@ -27,6 +27,8 @@ struct GameScreen: View {
                 SuccessAnimation(geometry: geometry)
                 
                 Settings()
+                
+                InterstitialAd()
             }
         }
         .onChange(of: gameVM.fruitsOrder) { _ in
@@ -107,6 +109,14 @@ struct GameScreen: View {
         if gameVM.isSettingsViewDisplayed {
             SettingsView(gameVM: gameVM)
         }
+    }
+    
+    //MARK: - AdMob
+    
+    @ViewBuilder
+    private func InterstitialAd() -> some View {
+        gameVM.adViewControllerRepresentable
+            .frame(width: .zero, height: .zero)
     }
 }
 

@@ -8,15 +8,16 @@
 import Foundation
 import AVFoundation
 
-class GameViewModel: ObservableObject {
+class GameViewModel: ObservableObject, ThemeSongDelegate {
     
     init() {
-//        UserDefaults.standard.set(150, forKey: "level")
+        //        UserDefaults.standard.set(150, forKey: "level")
+        adCoordinator.themeSongDelegate = self
         startGame()
     }
     
+    // Game Logic
     var correctCount: Int = 0
-    
     @Published var level = 1
     @Published var answer: [Fruit] = []
     @Published var fruitsOrder: [Fruit] = []
@@ -24,7 +25,7 @@ class GameViewModel: ObservableObject {
     @Published var showSuccessView: Bool = false
     @Published var swappedFruits: Bool = false
     
-    //Audio
+    // Audio
     @Published var audioPlayer: AVAudioPlayer?
     @Published var themeSongPlayer: AVAudioPlayer?
     @Published var isMusicOff: Bool = true {
@@ -40,6 +41,12 @@ class GameViewModel: ObservableObject {
     // Settings
     @Published var isFXOff: Bool = true
     @Published var isSettingsViewDisplayed: Bool = false
+    
+    // AdMob
+    let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private let adCoordinator = AdCoordinator()
+    private var levelsBeetweenAdsCounter: Int = 0
+    private let levelsBeforeAdDisplay = 3
     
     func swapElements(index1: Int, index2: Int) {
         if !swappedFruits { countFirstSwap() }
@@ -67,6 +74,7 @@ class GameViewModel: ObservableObject {
     }
     
     private func prepareLevel() {
+        processAd()
         correctCount = 0
         saveLevel()
         sortAnswer()
@@ -164,7 +172,7 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    private func playThemeSong() {
+    func playThemeSong() {
         guard let path = Bundle.main.path(forResource: "theme", ofType: "mp3") else {
             print("Audio file not found")
             return
@@ -177,5 +185,35 @@ class GameViewModel: ObservableObject {
         } catch {
             print("Error playing audio: \(error.localizedDescription)")
         }
+    }
+    
+    func stopThemeSongDuringAd() {
+        themeSongPlayer?.stop()
+    }
+    
+    func resumeThemeSongAfterAd() {
+        if !isMusicOff {
+            playThemeSong()
+        }
+    }
+    
+    //MARK: - AdMob 📲
+    
+    private func processAd() {
+        if levelsBeetweenAdsCounter == levelsBeforeAdDisplay {
+            playAd()
+            levelsBeetweenAdsCounter = 0
+        } else {
+            loadAd()
+            levelsBeetweenAdsCounter += 1
+        }
+    }
+    
+    private func loadAd() {
+        adCoordinator.loadAd()
+    }
+    
+    private func playAd() {
+        adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
     }
 }

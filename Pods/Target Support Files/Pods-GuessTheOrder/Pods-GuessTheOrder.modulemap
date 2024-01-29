@@ -1,0 +1,6 @@
+framework module Pods_GuessTheOrder {
+  umbrella header "Pods-GuessTheOrder-umbrella.h"
+
+  export *
+  module * { export * }
+}
