@@ -27,18 +27,18 @@ class GameViewModel: ObservableObject {
     //Audio
     @Published var audioPlayer: AVAudioPlayer?
     @Published var themeSongPlayer: AVAudioPlayer?
-    @Published var isMusicOn: Bool = true {
+    @Published var isMusicOff: Bool = true {
         didSet {
-            if isMusicOn {
-                playThemeSong()
-            } else {
+            if isMusicOff {
                 themeSongPlayer?.stop()
+            } else {
+                playThemeSong()
             }
         }
     }
     
     // Settings
-    @Published var isFXOn: Bool = true
+    @Published var isFXOff: Bool = true
     @Published var isSettingsViewDisplayed: Bool = false
     
     func swapElements(index1: Int, index2: Int) {
@@ -61,7 +61,7 @@ class GameViewModel: ObservableObject {
     }
     
     private func startGame() {
-        playThemeSong()
+        loadSettings()
         loadLevel()
         prepareLevel()
     }
@@ -107,7 +107,7 @@ class GameViewModel: ObservableObject {
     }
     
     private func saveLevel() {
-        
+        UserDefaults.standard.set(level, forKey: "level")
     }
     
     private func loadLevel() {
@@ -139,10 +139,16 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    private func loadSettings() {
+        isFXOff = UserDefaults.standard.bool(forKey: "isFXOff")
+        isMusicOff = UserDefaults.standard.bool(forKey: "isMusicOff")
+        if !isMusicOff { playThemeSong() }
+    }
+    
     //MARK: - Audio 📣
     
     func playAudio(_ audioName: String) {
-        if isFXOn {
+        if !isFXOff {
             guard let path = Bundle.main.path(forResource: audioName, ofType: "mp3") else {
                 print("Audio file not found")
                 return

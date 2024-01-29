@@ -54,6 +54,7 @@ struct GameScreen: View {
                         .frame(width: 20, height: 20)
                         .foregroundStyle(.white)
                         .onTapGesture {
+                            hapticFeedback()
                             gameVM.isSettingsViewDisplayed.toggle()
                         }
                 }
@@ -76,7 +77,6 @@ struct GameScreen: View {
             
             Spacer()
         }
-        .padding()
     }
     
     //MARK: - Tutorial View

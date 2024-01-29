@@ -14,20 +14,13 @@ struct FruitView: View {
     var body: some View {
         HStack {
             ForEach(gameVM.fruitsOrder, id: \.self) { fruit in
-                //                Image(fruit.name)
-                //                    .resizable()
-                //                    .aspectRatio(contentMode: .fit)
-                //                    .frame(width: screenWidth / CGFloat(gameVM.fruitsOrder.count + 2), height: screenWidth / CGFloat(gameVM.fruitsOrder.count + 2))
-                //                    .padding(.bottom, gameVM.selectedFruit == fruit ? 32 : 0)
-                //                    .onTapGesture {
-                //                        manageTouchGesture(fruit: fruit)
-                //                    }
                 Text(fruit.emoji)
                     .font(.system(size: fruitSize()))
-                    .padding(.bottom, gameVM.selectedFruit == fruit ? 32 : 0)
+                    .padding(.bottom, gameVM.selectedFruit == fruit ? 40 : 0)
                     .onTapGesture {
                         manageTouchGesture(fruit: fruit)
                     }
+                    .animation(.easeInOut)
             }
         }
     }
@@ -64,7 +57,7 @@ struct FruitView: View {
         case 70 ..< 100:
             return 40
         default:
-            return 32
+            return 40
         }
     }
 }

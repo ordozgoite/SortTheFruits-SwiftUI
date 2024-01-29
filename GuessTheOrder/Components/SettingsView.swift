@@ -33,6 +33,7 @@ struct SettingsView: View {
                 Image(systemName: "x.circle.fill")
                     .foregroundStyle(.white)
                     .onTapGesture {
+                        hapticFeedback()
                         gameVM.isSettingsViewDisplayed = false
                     }
             }
@@ -67,13 +68,15 @@ struct SettingsView: View {
     @ViewBuilder
     private func MusicButton() -> some View {
         VStack {
-            Image(systemName: gameVM.isMusicOn ? "music.note" : "speaker.slash")
+            Image(systemName: gameVM.isMusicOff ? "speaker.slash" : "music.note")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 32, height: 32)
                 .foregroundStyle(.white)
                 .onTapGesture {
-                    gameVM.isMusicOn.toggle()
+                    hapticFeedback()
+                    gameVM.isMusicOff.toggle()
+                    UserDefaults.standard.set(gameVM.isMusicOff, forKey: "isMusicOff")
                 }
             
             Text("Music")
@@ -86,13 +89,15 @@ struct SettingsView: View {
     @ViewBuilder
     private func AudioFXButton() -> some View {
         VStack {
-            Image(systemName: gameVM.isFXOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+            Image(systemName: gameVM.isFXOff ? "speaker.slash.fill" : "speaker.wave.2.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 32, height: 32)
                 .foregroundStyle(.white)
                 .onTapGesture {
-                    gameVM.isFXOn.toggle()
+                    hapticFeedback()
+                    gameVM.isFXOff.toggle()
+                    UserDefaults.standard.set(gameVM.isFXOff, forKey: "isFXOff")
                 }
             
             Text("Effects")
