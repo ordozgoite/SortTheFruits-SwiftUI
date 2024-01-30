@@ -46,7 +46,7 @@ struct SettingsView: View {
     @ViewBuilder
     private func Options() -> some View {
         VStack {
-            Text("Menu")
+            Text("menu-string")
                 .foregroundStyle(.white)
                 .font(.title)
                 .fontWeight(.bold)
@@ -79,7 +79,7 @@ struct SettingsView: View {
                     UserDefaults.standard.set(gameVM.isMusicOff, forKey: "isMusicOff")
                 }
             
-            Text("Music")
+            Text("music-string")
                 .foregroundStyle(.white)
         }
     }
@@ -100,7 +100,7 @@ struct SettingsView: View {
                     UserDefaults.standard.set(gameVM.isFXOff, forKey: "isFXOff")
                 }
             
-            Text("Effects")
+            Text("fx-string")
                 .foregroundStyle(.white)
         }
     }

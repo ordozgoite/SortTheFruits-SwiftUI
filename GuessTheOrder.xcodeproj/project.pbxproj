@@ -42,6 +42,7 @@
 		ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */; };
 		EDF230552B67FDB8002A27D8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EDF230542B67FDB8002A27D8 /* GoogleMobileAds */; };
 		EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF230562B67FDF4002A27D8 /* AdBannerView.swift */; };
+		EDF2305A2B68678F002A27D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF2305C2B68678F002A27D8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,10 @@
 		ED480F782B67284500DA4FD1 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EDF230562B67FDF4002A27D8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
+		EDF2305B2B68678F002A27D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDF2305D2B686AB9002A27D8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EDF2305E2B68A1C4002A27D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EDF2305F2B68A20B002A27D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,7 @@
 				ED02BF042B6591D9003065DE /* Assets.xcassets */,
 				ED02BF1B2B65E519003065DE /* confetti.json */,
 				ED02BF062B6591D9003065DE /* Preview Content */,
+				EDF2305C2B68678F002A27D8 /* Localizable.strings */,
 			);
 			path = GuessTheOrder;
 			sourceTree = "<group>";
@@ -254,6 +260,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				"pt-PT",
+				ru,
 			);
 			mainGroup = ED02BEF42B6591D7003065DE;
 			packageReferences = (
@@ -274,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF2305A2B68678F002A27D8 /* Localizable.strings in Resources */,
 				ED02BF402B66FEF4003065DE /* 9.mp3 in Resources */,
 				ED02BF412B66FEF4003065DE /* 6.mp3 in Resources */,
 				ED02BF1C2B65E519003065DE /* confetti.json in Resources */,
@@ -322,12 +332,27 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		EDF2305C2B68678F002A27D8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF2305B2B68678F002A27D8 /* en */,
+				EDF2305D2B686AB9002A27D8 /* pt-BR */,
+				EDF2305E2B68A1C4002A27D8 /* pt-PT */,
+				EDF2305F2B68A20B002A27D8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		ED02BF092B6591D9003065DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -391,6 +416,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

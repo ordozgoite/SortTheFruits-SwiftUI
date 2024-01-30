@@ -1,0 +1,10 @@
+"level-string %@" = "Level %@";
+"swap-tutorial-string" = "Tap those fruity friends to shake things up!";
+"level1-tutorial-string" = "Arrange the fruits by swapping their positions until they are in the correct order.";
+"level5-tutorial-string" = "The amount of fruits increases as you progress to higher levels.";
+"level40-tutorial-string" = "You're crushing it! Let's spice it up!";
+"level70-tutorial=string" = "Can you juggle 7 fruity pals? 🤹‍♂️";
+"level100-tutorial-string" = "Hooray! You've hit the fruity century! 🎉";
+"menu-string" = "Menu";
+"music-string" = "Music";
+"fx-string" = "Effects";

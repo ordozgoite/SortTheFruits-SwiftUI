@@ -87,8 +87,12 @@ struct GameScreen: View {
     private func TutorialText() -> some View {
         VStack {
             Spacer()
+            Spacer()
+            Spacer()
             TutorialView(gameVM: gameVM)
-        }.padding()
+            Spacer()
+        }
+        .padding()
     }
     
     //MARK: - Success Animation

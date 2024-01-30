@@ -12,28 +12,28 @@ struct TutorialView: View {
     @ObservedObject var gameVM: GameViewModel
     
     var body: some View {
-        Text(tutorialMessage())
-            .font(.title2)
-            .fontWeight(.medium)
+        tutorialMessage()
+            .font(.title)
+            .fontWeight(.light)
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
     }
     
-    private func tutorialMessage() -> String {
+    private func tutorialMessage() -> Text {
         if !gameVM.swappedFruits {
-            return "Tap the fruits to swap them."
+            return Text("swap-tutorial-string")
         } else if gameVM.level == 1 {
-            return "Try to guess the order of the Fruits"
+            return Text("level1-tutorial-string")
         } else if gameVM.level == 5 {
-            return "The amount of fruits increases as you progress to higher levels."
+            return Text("level5-tutorial-string")
         } else if gameVM.level == 40 {
-            return "You're doing great! Let's make it harder!"
+            return Text("level40-tutorial-string")
         } else if gameVM.level == 70 {
-            return "Let's see if you candle 7 fruits 🤔"
+            return Text("level70-tutorial-string")
         } else if gameVM.level == 100 {
-            return "Congratulations for reach level 100 🎉"
+            return Text("level100-tutorial-string")
         }
-        return  ""
+        return  Text("")
     }
 }
 

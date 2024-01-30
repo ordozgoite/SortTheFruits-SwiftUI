@@ -12,7 +12,7 @@ struct LevelView: View {
     @ObservedObject var gameVM: GameViewModel
     
     var body: some View {
-        Text("Level \(gameVM.level)")
+        Text("level-string \(String(gameVM.level))")
             .foregroundStyle(.white)
             .font(.title3)
             .fontWeight(.medium)
