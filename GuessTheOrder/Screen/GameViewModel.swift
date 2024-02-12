@@ -11,25 +11,36 @@ import AVFoundation
 class GameViewModel: ObservableObject, ThemeSongDelegate {
     
     init() {
-        //        UserDefaults.standard.set(150, forKey: "level")
         adCoordinator.themeSongDelegate = self
         startGame()
     }
     
     // Game Logic
     var correctCount: Int = 0
-    @Published var level = 1
+    @Published var level = LocalState.level {
+        didSet {
+            LocalState.level = level
+        }
+    }
     @Published var answer: [Fruit] = []
     @Published var fruitsOrder: [Fruit] = []
     @Published var selectedFruit: Fruit?
     @Published var showSuccessView: Bool = false
-    @Published var swappedFruits: Bool = false
+    @Published var swappedFruits: Bool = LocalState.swappedFruits {
+        didSet {
+            LocalState.swappedFruits = swappedFruits
+        }
+    }
     
     // Audio
     @Published var audioPlayer: AVAudioPlayer?
     @Published var themeSongPlayer: AVAudioPlayer?
-    @Published var isMusicOff: Bool = true {
+    
+    // Settings
+    @Published var isSettingsViewDisplayed: Bool = false
+    @Published var isMusicOff: Bool = LocalState.isMusicOff {
         didSet {
+            LocalState.isMusicOff = isMusicOff
             if isMusicOff {
                 themeSongPlayer?.stop()
             } else {
@@ -37,10 +48,11 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
             }
         }
     }
-    
-    // Settings
-    @Published var isFXOff: Bool = true
-    @Published var isSettingsViewDisplayed: Bool = false
+    @Published var isFXOff: Bool = LocalState.isFXOff {
+        didSet {
+            LocalState.isFXOff = isFXOff
+        }
+    }
     
     // AdMob
     let adViewControllerRepresentable = AdViewControllerRepresentable()
@@ -49,7 +61,7 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
     private let levelsBeforeAdDisplay = 3
     
     func swapElements(index1: Int, index2: Int) {
-        if !swappedFruits { countFirstSwap() }
+        if !swappedFruits { swappedFruits = true }
         let temp = fruitsOrder[index1]
         fruitsOrder[index1] = fruitsOrder[index2]
         fruitsOrder[index2] = temp
@@ -68,15 +80,13 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
     }
     
     private func startGame() {
-        loadSettings()
-        loadLevel()
+        playThemeSong()
         prepareLevel()
     }
     
     private func prepareLevel() {
         processAd()
         correctCount = 0
-        saveLevel()
         sortAnswer()
         sortFruitsOrder()
     }
@@ -114,27 +124,6 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
         return zip(array1, array2).contains { $0.0 == $0.1 }
     }
     
-    private func saveLevel() {
-        UserDefaults.standard.set(level, forKey: "level")
-    }
-    
-    private func loadLevel() {
-        let levelSaved = UserDefaults.standard.integer(forKey: "level")
-        if levelSaved == 0 {
-            level = 1
-        } else {
-            level = levelSaved
-        }
-        
-        swappedFruits = UserDefaults.standard.bool(forKey: "swappedFruits")
-        print("👉 Swapped Fruits: \(swappedFruits)")
-    }
-    
-    private func countFirstSwap() {
-        swappedFruits = true
-        UserDefaults.standard.set(swappedFruits, forKey: "swappedFruits")
-    }
-    
     private func countCorrectFruits() {
         let matchingCount = zip(fruitsOrder, answer).reduce(0) { (count, pair) in
             return pair.0 == pair.1 ? count + 1 : count
@@ -145,12 +134,6 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
         } else {
             correctCount = matchingCount
         }
-    }
-    
-    private func loadSettings() {
-        isFXOff = UserDefaults.standard.bool(forKey: "isFXOff")
-        isMusicOff = UserDefaults.standard.bool(forKey: "isMusicOff")
-        if !isMusicOff { playThemeSong() }
     }
     
     //MARK: - Audio 📣
@@ -173,17 +156,19 @@ class GameViewModel: ObservableObject, ThemeSongDelegate {
     }
     
     func playThemeSong() {
-        guard let path = Bundle.main.path(forResource: "theme", ofType: "mp3") else {
-            print("Audio file not found")
-            return
-        }
-        do {
-            themeSongPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            themeSongPlayer?.numberOfLoops = -1
-            themeSongPlayer?.prepareToPlay()
-            themeSongPlayer?.play()
-        } catch {
-            print("Error playing audio: \(error.localizedDescription)")
+        if !isMusicOff {
+            guard let path = Bundle.main.path(forResource: "theme", ofType: "mp3") else {
+                print("Audio file not found")
+                return
+            }
+            do {
+                themeSongPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                themeSongPlayer?.numberOfLoops = -1
+                themeSongPlayer?.prepareToPlay()
+                themeSongPlayer?.play()
+            } catch {
+                print("Error playing audio: \(error.localizedDescription)")
+            }
         }
     }
     

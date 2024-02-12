@@ -40,6 +40,7 @@
 		ED480F772B67281E00DA4FD1 /* Octopus Game.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED480F762B67281900DA4FD1 /* Octopus Game.ttf */; };
 		ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F782B67284500DA4FD1 /* LaunchScreen.swift */; };
 		ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */; };
+		EDD50D682B79B4A200548266 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD50D672B79B4A200548266 /* LocalState.swift */; };
 		EDF230552B67FDB8002A27D8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EDF230542B67FDB8002A27D8 /* GoogleMobileAds */; };
 		EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF230562B67FDF4002A27D8 /* AdBannerView.swift */; };
 		EDF2305A2B68678F002A27D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF2305C2B68678F002A27D8 /* Localizable.strings */; };
@@ -80,6 +81,7 @@
 		ED480F762B67281900DA4FD1 /* Octopus Game.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Octopus Game.ttf"; sourceTree = "<group>"; };
 		ED480F782B67284500DA4FD1 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EDD50D672B79B4A200548266 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		EDF230562B67FDF4002A27D8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		EDF2305B2B68678F002A27D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDF2305D2B686AB9002A27D8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				ED02BF122B65A7F7003065DE /* Sizes.swift */,
 				ED02BF162B65D6B0003065DE /* Haptic.swift */,
+				EDD50D672B79B4A200548266 /* LocalState.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED02BF212B65E5BE003065DE /* SuccessView.swift in Sources */,
+				EDD50D682B79B4A200548266 /* LocalState.swift in Sources */,
 				ED02BF2C2B66F296003065DE /* TutorialView.swift in Sources */,
 				ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */,
 				ED02BF172B65D6B0003065DE /* Haptic.swift in Sources */,
@@ -480,6 +484,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GuessTheOrder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sort The Fruits";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -514,6 +519,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GuessTheOrder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sort The Fruits";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
