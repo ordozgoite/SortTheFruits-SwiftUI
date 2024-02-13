@@ -40,6 +40,10 @@
 		ED480F772B67281E00DA4FD1 /* Octopus Game.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED480F762B67281900DA4FD1 /* Octopus Game.ttf */; };
 		ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F782B67284500DA4FD1 /* LaunchScreen.swift */; };
 		ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */; };
+		ED5CB1542B79CD4300C336EC /* GameManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CB1532B79CD4300C336EC /* GameManagerViewModel.swift */; };
+		ED5CB1562B79D11D00C336EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CB1552B79D11D00C336EC /* Constants.swift */; };
+		ED5CB1582B79D8E800C336EC /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CB1572B79D8E800C336EC /* AudioManager.swift */; };
+		ED5CB15B2B7AC1AE00C336EC /* AdManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CB15A2B7AC1AE00C336EC /* AdManagerViewModel.swift */; };
 		EDD50D682B79B4A200548266 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD50D672B79B4A200548266 /* LocalState.swift */; };
 		EDF230552B67FDB8002A27D8 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = EDF230542B67FDB8002A27D8 /* GoogleMobileAds */; };
 		EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF230562B67FDF4002A27D8 /* AdBannerView.swift */; };
@@ -81,6 +85,10 @@
 		ED480F762B67281900DA4FD1 /* Octopus Game.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Octopus Game.ttf"; sourceTree = "<group>"; };
 		ED480F782B67284500DA4FD1 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ED5CB1532B79CD4300C336EC /* GameManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerViewModel.swift; sourceTree = "<group>"; };
+		ED5CB1552B79D11D00C336EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ED5CB1572B79D8E800C336EC /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		ED5CB15A2B7AC1AE00C336EC /* AdManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManagerViewModel.swift; sourceTree = "<group>"; };
 		EDD50D672B79B4A200548266 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		EDF230562B67FDF4002A27D8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		EDF2305B2B68678F002A27D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 				ED02BF152B65D69C003065DE /* Util */,
 				ED02BF442B67009F003065DE /* Model */,
 				ED02BF1D2B65E51E003065DE /* Components */,
+				ED5CB1592B79E4A400C336EC /* View Model */,
 				ED02BF142B65D687003065DE /* Screen */,
 				ED02BF002B6591D7003065DE /* GuessTheOrderApp.swift */,
 				ED480F782B67284500DA4FD1 /* LaunchScreen.swift */,
@@ -150,7 +159,6 @@
 		ED02BF142B65D687003065DE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				ED02BF102B659AF8003065DE /* GameViewModel.swift */,
 				ED02BF0E2B6591F6003065DE /* GameScreen.swift */,
 			);
 			path = Screen;
@@ -162,6 +170,7 @@
 				ED02BF122B65A7F7003065DE /* Sizes.swift */,
 				ED02BF162B65D6B0003065DE /* Haptic.swift */,
 				EDD50D672B79B4A200548266 /* LocalState.swift */,
+				ED5CB1552B79D11D00C336EC /* Constants.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -215,6 +224,17 @@
 				ED02BF452B6700B4003065DE /* Fruit.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ED5CB1592B79E4A400C336EC /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF102B659AF8003065DE /* GameViewModel.swift */,
+				ED5CB1532B79CD4300C336EC /* GameManagerViewModel.swift */,
+				ED5CB1572B79D8E800C336EC /* AudioManager.swift */,
+				ED5CB15A2B7AC1AE00C336EC /* AdManagerViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,9 +344,13 @@
 				ED02BF132B65A7F7003065DE /* Sizes.swift in Sources */,
 				ED02BF032B6591D7003065DE /* ContentView.swift in Sources */,
 				ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */,
+				ED5CB1542B79CD4300C336EC /* GameManagerViewModel.swift in Sources */,
 				ED02BF282B66F179003065DE /* LevelView.swift in Sources */,
 				EDF230572B67FDF4002A27D8 /* AdBannerView.swift in Sources */,
 				ED02BF232B65E688003065DE /* Background.swift in Sources */,
+				ED5CB1582B79D8E800C336EC /* AudioManager.swift in Sources */,
+				ED5CB1562B79D11D00C336EC /* Constants.swift in Sources */,
+				ED5CB15B2B7AC1AE00C336EC /* AdManagerViewModel.swift in Sources */,
 				ED02BF1F2B65E538003065DE /* LottieView.swift in Sources */,
 				ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */,
 				ED02BF012B6591D7003065DE /* GuessTheOrderApp.swift in Sources */,

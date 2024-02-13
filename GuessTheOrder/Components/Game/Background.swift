@@ -9,10 +9,10 @@ import SwiftUI
 
 struct Background: View {
     
-    @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameManagerVM: GameManagerViewModel
 
     var body: some View {
-        let gradientColors = gradientColorsForLevel(gameVM.level)
+        let gradientColors = gradientColorsForLevel(gameManagerVM.level)
 
         return LinearGradient(
             gradient: Gradient(colors: gradientColors),
@@ -29,5 +29,5 @@ struct Background: View {
 }
 
 #Preview {
-    Background(gameVM: GameViewModel())
+    Background(gameManagerVM: GameManagerViewModel())
 }

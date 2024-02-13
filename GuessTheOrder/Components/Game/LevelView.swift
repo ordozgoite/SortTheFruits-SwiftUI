@@ -9,10 +9,10 @@ import SwiftUI
 
 struct LevelView: View {
     
-    @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameManagerVM: GameManagerViewModel
     
     var body: some View {
-        Text("level-string \(String(gameVM.level))")
+        Text("level-string \(String(gameManagerVM.level))")
             .foregroundStyle(.white)
             .font(.title3)
             .fontWeight(.medium)
@@ -20,5 +20,5 @@ struct LevelView: View {
 }
 
 #Preview {
-    LevelView(gameVM: GameViewModel())
+    LevelView(gameManagerVM: GameManagerViewModel())
 }

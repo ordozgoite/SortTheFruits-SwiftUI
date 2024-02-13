@@ -8,16 +8,9 @@
 import SwiftUI
 import GoogleMobileAds
 
-protocol ThemeSongDelegate {
-    func stopThemeSongDuringAd()
-    func resumeThemeSongAfterAd()
-}
-
 class AdCoordinator: NSObject, GADFullScreenContentDelegate {
     
     private var ad: GADInterstitialAd?
-    
-    var themeSongDelegate: ThemeSongDelegate?
     
     func loadAd() {
         GADInterstitialAd.load(
@@ -56,7 +49,7 @@ class AdCoordinator: NSObject, GADFullScreenContentDelegate {
     
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("\(#function) called")
-        themeSongDelegate?.stopThemeSongDuringAd()
+        if !LocalState.isMusicOff { stopThemeSong() }
     }
     
     
@@ -66,7 +59,21 @@ class AdCoordinator: NSObject, GADFullScreenContentDelegate {
     
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("\(#function) called")
-        themeSongDelegate?.resumeThemeSongAfterAd()
+        if !LocalState.isMusicOff { playThemeSong() }
+    }
+}
+
+// Audio 📣
+
+extension AdCoordinator {
+    private func playThemeSong() {
+        let name = Notification.Name(Constants.playThemeSongNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
+    }
+    
+    private func stopThemeSong() {
+        let name = Notification.Name(Constants.stopThemeSongNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
     }
 }
 

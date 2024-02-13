@@ -76,7 +76,6 @@ struct SettingsView: View {
                 .onTapGesture {
                     hapticFeedback()
                     gameVM.isMusicOff.toggle()
-                    UserDefaults.standard.set(gameVM.isMusicOff, forKey: "isMusicOff")
                 }
             
             Text("music-string")
@@ -97,7 +96,6 @@ struct SettingsView: View {
                 .onTapGesture {
                     hapticFeedback()
                     gameVM.isFXOff.toggle()
-                    UserDefaults.standard.set(gameVM.isFXOff, forKey: "isFXOff")
                 }
             
             Text("fx-string")

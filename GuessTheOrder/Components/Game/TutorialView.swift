@@ -10,6 +10,7 @@ import SwiftUI
 struct TutorialView: View {
     
     @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameManagerVM: GameManagerViewModel
     
     var body: some View {
         tutorialMessage()
@@ -22,15 +23,15 @@ struct TutorialView: View {
     private func tutorialMessage() -> Text {
         if !gameVM.swappedFruits {
             return Text("swap-tutorial-string")
-        } else if gameVM.level == 1 {
+        } else if gameManagerVM.level == 1 {
             return Text("level1-tutorial-string")
-        } else if gameVM.level == 5 {
+        } else if gameManagerVM.level == 5 {
             return Text("level5-tutorial-string")
-        } else if gameVM.level == 40 {
+        } else if gameManagerVM.level == 40 {
             return Text("level40-tutorial-string")
-        } else if gameVM.level == 70 {
+        } else if gameManagerVM.level == 70 {
             return Text("level70-tutorial-string")
-        } else if gameVM.level == 100 {
+        } else if gameManagerVM.level == 100 {
             return Text("level100-tutorial-string")
         }
         return  Text("")
@@ -38,5 +39,5 @@ struct TutorialView: View {
 }
 
 #Preview {
-    TutorialView(gameVM: GameViewModel())
+    TutorialView(gameVM: GameViewModel(), gameManagerVM: GameManagerViewModel())
 }

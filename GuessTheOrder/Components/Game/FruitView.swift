@@ -9,14 +9,14 @@ import SwiftUI
 
 struct FruitView: View {
     
-    @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameManagerVM: GameManagerViewModel
     
     var body: some View {
         HStack {
-            ForEach(gameVM.fruitsOrder, id: \.self) { fruit in
+            ForEach(gameManagerVM.fruitsOrder, id: \.self) { fruit in
                 Text(fruit.emoji)
                     .font(.system(size: fruitSize()))
-                    .padding(.bottom, gameVM.selectedFruit == fruit ? 40 : 0)
+                    .padding(.bottom, gameManagerVM.selectedFruit == fruit ? 40 : 0)
                     .onTapGesture {
                         manageTouchGesture(fruit: fruit)
                     }
@@ -26,12 +26,12 @@ struct FruitView: View {
     }
     
     private func manageTouchGesture(fruit: Fruit) {
-        if gameVM.selectedFruit == nil {
+        if gameManagerVM.selectedFruit == nil {
             hapticFeedback()
-            gameVM.selectedFruit = fruit
-        } else if gameVM.selectedFruit == fruit {
+            gameManagerVM.selectedFruit = fruit
+        } else if gameManagerVM.selectedFruit == fruit {
             hapticFeedback()
-            gameVM.selectedFruit = nil
+            gameManagerVM.selectedFruit = nil
         } else {
             hapticFeedback(style: .heavy)
             prepareToSwapElements(fruit: fruit)
@@ -39,15 +39,15 @@ struct FruitView: View {
     }
     
     private func prepareToSwapElements(fruit: Fruit) {
-        if let selectedIndex = gameVM.fruitsOrder.firstIndex(of: gameVM.selectedFruit!),
-           let tappedIndex = gameVM.fruitsOrder.firstIndex(of: fruit) {
-            gameVM.swapElements(index1: selectedIndex, index2: tappedIndex)
+        if let selectedIndex = gameManagerVM.fruitsOrder.firstIndex(of: gameManagerVM.selectedFruit!),
+           let tappedIndex = gameManagerVM.fruitsOrder.firstIndex(of: fruit) {
+            gameManagerVM.swapElements(index1: selectedIndex, index2: tappedIndex)
         }
-        gameVM.selectedFruit = nil
+        gameManagerVM.selectedFruit = nil
     }
     
     private func fruitSize() -> CGFloat {
-        switch gameVM.level {
+        switch gameManagerVM.level {
         case 1 ..< 5:
             return 64
         case 5 ..< 40:
@@ -63,5 +63,5 @@ struct FruitView: View {
 }
 
 #Preview {
-    FruitView(gameVM: GameViewModel())
+    FruitView(gameManagerVM: GameManagerViewModel())
 }

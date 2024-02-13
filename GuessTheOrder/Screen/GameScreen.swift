@@ -11,12 +11,15 @@ import AVFoundation
 
 struct GameScreen: View {
     
+    private let audioManager = AudioManager()
+    private let adManager = AdManager()
     @ObservedObject private var gameVM = GameViewModel()
+    @ObservedObject private var gameManagerVM = GameManagerViewModel()
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Background(gameVM: gameVM)
+                Background(gameManagerVM: gameManagerVM)
                 
                 Header()
                 
@@ -31,8 +34,8 @@ struct GameScreen: View {
                 InterstitialAd()
             }
         }
-        .onChange(of: gameVM.fruitsOrder) { _ in
-            if gameVM.correctCount == gameVM.fruitsOrder.count {
+        .onChange(of: gameManagerVM.fruitsOrder) { _ in
+            if gameManagerVM.correctCount == gameManagerVM.fruitsOrder.count {
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 gameVM.goToNextLevel()
             }
@@ -46,7 +49,7 @@ struct GameScreen: View {
         VStack {
             ZStack(alignment: .top) {
                 HStack {
-                    LevelView(gameVM: gameVM)
+                    LevelView(gameManagerVM: gameManagerVM)
                     
                     Spacer()
                     
@@ -60,7 +63,7 @@ struct GameScreen: View {
                             gameVM.isSettingsViewDisplayed.toggle()
                         }
                 }
-                CounterView(gameVM: gameVM)
+                CounterView(gameManagerVM: gameManagerVM)
             }
             
             Spacer()
@@ -75,7 +78,7 @@ struct GameScreen: View {
         VStack {
             Spacer()
             
-            FruitView(gameVM: gameVM)
+            FruitView(gameManagerVM: gameManagerVM)
             
             Spacer()
         }
@@ -89,7 +92,7 @@ struct GameScreen: View {
             Spacer()
             Spacer()
             Spacer()
-            TutorialView(gameVM: gameVM)
+            TutorialView(gameVM: gameVM, gameManagerVM: gameManagerVM)
             Spacer()
         }
         .padding()
@@ -119,7 +122,7 @@ struct GameScreen: View {
     
     @ViewBuilder
     private func InterstitialAd() -> some View {
-        gameVM.adViewControllerRepresentable
+        adManager.adViewControllerRepresentable
             .frame(width: .zero, height: .zero)
     }
 }
