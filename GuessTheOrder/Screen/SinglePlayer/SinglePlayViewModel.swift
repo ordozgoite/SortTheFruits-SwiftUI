@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GameViewModel: ObservableObject {
+class SinglePlayViewModel: ObservableObject {
     
     init() {
         addObservers()
@@ -68,7 +68,7 @@ class GameViewModel: ObservableObject {
 
 // Audio 📣
 
-extension GameViewModel {
+extension SinglePlayViewModel {
     private func playThemeSong() {
         let name = Notification.Name(Constants.playThemeSongNotificationKey)
         NotificationCenter.default.post(name: name, object: nil)
@@ -87,7 +87,7 @@ extension GameViewModel {
 
 // AdMob 📲
 
-extension GameViewModel {
+extension SinglePlayViewModel {
     private func processAd() {
         let name = Notification.Name(Constants.processAdNotificationKey)
         NotificationCenter.default.post(name: name, object: nil)

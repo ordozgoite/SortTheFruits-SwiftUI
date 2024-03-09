@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TutorialView: View {
     
-    @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameVM: SinglePlayViewModel
     @ObservedObject var gameManagerVM: GameManagerViewModel
     
     var body: some View {
@@ -39,5 +39,5 @@ struct TutorialView: View {
 }
 
 #Preview {
-    TutorialView(gameVM: GameViewModel(), gameManagerVM: GameManagerViewModel())
+    TutorialView(gameVM: SinglePlayViewModel(), gameManagerVM: GameManagerViewModel())
 }

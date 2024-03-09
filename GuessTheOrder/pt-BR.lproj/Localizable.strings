@@ -3,8 +3,9 @@
 "level1-tutorial-string" = "Organize as frutas na ordem certa.";
 "level5-tutorial-string" = "A quantidade de frutas vai aumentar com o passar dos níveis.";
 "level40-tutorial-string" = "Você tá amassando! Agora será mais difícil!";
-"level70-tutorial=string" = "7 frutas, tá bom pra você? 🤔";
+"level70-tutorial-string" = "7 frutas, tá bom pra você? 🤔";
 "level100-tutorial-string" = "Nível 100 é pra poucos! 🎉";
 "menu-string" = "Menu";
 "music-string" = "Música";
 "fx-string" = "Efeitos";
+"correct-string" = "Correto";

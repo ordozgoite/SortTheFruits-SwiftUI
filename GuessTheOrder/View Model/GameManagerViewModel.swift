@@ -93,8 +93,10 @@ class GameManagerViewModel: ObservableObject {
     }
     
     private func playCorrectAudio() {
-        let name = Notification.Name(Constants.playCorrectAudioNotificationKey)
-        NotificationCenter.default.post(name: name, object: nil, userInfo: ["correctCount": String(correctCount)])
+        if !LocalState.isFXOff {
+            let name = Notification.Name(Constants.playCorrectAudioNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil, userInfo: ["correctCount": String(correctCount)])
+        }
     }
     
     private func countFirstSwappedFruits() {

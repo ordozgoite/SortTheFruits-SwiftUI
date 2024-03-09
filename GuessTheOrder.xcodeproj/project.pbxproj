@@ -11,8 +11,8 @@
 		ED02BF032B6591D7003065DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF022B6591D7003065DE /* ContentView.swift */; };
 		ED02BF052B6591D9003065DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF042B6591D9003065DE /* Assets.xcassets */; };
 		ED02BF082B6591D9003065DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF072B6591D9003065DE /* Preview Assets.xcassets */; };
-		ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF0E2B6591F6003065DE /* GameScreen.swift */; };
-		ED02BF112B659AF8003065DE /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF102B659AF8003065DE /* GameViewModel.swift */; };
+		ED02BF0F2B6591F7003065DE /* SinglePlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF0E2B6591F6003065DE /* SinglePlayScreen.swift */; };
+		ED02BF112B659AF8003065DE /* SinglePlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF102B659AF8003065DE /* SinglePlayViewModel.swift */; };
 		ED02BF132B65A7F7003065DE /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF122B65A7F7003065DE /* Sizes.swift */; };
 		ED02BF172B65D6B0003065DE /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF162B65D6B0003065DE /* Haptic.swift */; };
 		ED02BF1A2B65E4E2003065DE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ED02BF192B65E4E2003065DE /* Lottie */; };
@@ -37,6 +37,7 @@
 		ED02BF432B66FEF4003065DE /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF382B66FEF4003065DE /* 8.mp3 */; };
 		ED02BF462B6700B4003065DE /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02BF452B6700B4003065DE /* Fruit.swift */; };
 		ED02BF482B670E14003065DE /* theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED02BF472B670E14003065DE /* theme.mp3 */; };
+		ED3775A92B9C0A1400BEF3D8 /* LocalMultiplayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3775A82B9C0A1400BEF3D8 /* LocalMultiplayScreen.swift */; };
 		ED480F772B67281E00DA4FD1 /* Octopus Game.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED480F762B67281900DA4FD1 /* Octopus Game.ttf */; };
 		ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F782B67284500DA4FD1 /* LaunchScreen.swift */; };
 		ED480F7B2B6745C200DA4FD1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED480F7A2B6745C200DA4FD1 /* SettingsView.swift */; };
@@ -56,8 +57,8 @@
 		ED02BF022B6591D7003065DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED02BF042B6591D9003065DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED02BF072B6591D9003065DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ED02BF0E2B6591F6003065DE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
-		ED02BF102B659AF8003065DE /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		ED02BF0E2B6591F6003065DE /* SinglePlayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayScreen.swift; sourceTree = "<group>"; };
+		ED02BF102B659AF8003065DE /* SinglePlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayViewModel.swift; sourceTree = "<group>"; };
 		ED02BF122B65A7F7003065DE /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		ED02BF162B65D6B0003065DE /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		ED02BF1B2B65E519003065DE /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		ED02BF382B66FEF4003065DE /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
 		ED02BF452B6700B4003065DE /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		ED02BF472B670E14003065DE /* theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theme.mp3; sourceTree = "<group>"; };
+		ED3775A82B9C0A1400BEF3D8 /* LocalMultiplayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMultiplayScreen.swift; sourceTree = "<group>"; };
 		ED480F752B67280A00DA4FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED480F762B67281900DA4FD1 /* Octopus Game.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Octopus Game.ttf"; sourceTree = "<group>"; };
 		ED480F782B67284500DA4FD1 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 		ED02BF142B65D687003065DE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				ED02BF0E2B6591F6003065DE /* GameScreen.swift */,
+				ED3775AA2B9C0A3F00BEF3D8 /* SinglePlayer */,
+				ED3775AB2B9C0A4D00BEF3D8 /* Multiplayer */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -226,10 +229,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED3775AA2B9C0A3F00BEF3D8 /* SinglePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				ED02BF102B659AF8003065DE /* SinglePlayViewModel.swift */,
+				ED02BF0E2B6591F6003065DE /* SinglePlayScreen.swift */,
+			);
+			path = SinglePlayer;
+			sourceTree = "<group>";
+		};
+		ED3775AB2B9C0A4D00BEF3D8 /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				ED3775A82B9C0A1400BEF3D8 /* LocalMultiplayScreen.swift */,
+			);
+			path = Multiplayer;
+			sourceTree = "<group>";
+		};
 		ED5CB1592B79E4A400C336EC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED02BF102B659AF8003065DE /* GameViewModel.swift */,
 				ED5CB1532B79CD4300C336EC /* GameManagerViewModel.swift */,
 				ED5CB1572B79D8E800C336EC /* AudioManager.swift */,
 				ED5CB15A2B7AC1AE00C336EC /* AdManagerViewModel.swift */,
@@ -338,7 +357,7 @@
 				ED02BF2C2B66F296003065DE /* TutorialView.swift in Sources */,
 				ED480F792B67284500DA4FD1 /* LaunchScreen.swift in Sources */,
 				ED02BF172B65D6B0003065DE /* Haptic.swift in Sources */,
-				ED02BF112B659AF8003065DE /* GameViewModel.swift in Sources */,
+				ED02BF112B659AF8003065DE /* SinglePlayViewModel.swift in Sources */,
 				ED02BF462B6700B4003065DE /* Fruit.swift in Sources */,
 				ED02BF2A2B66F1FD003065DE /* FruitView.swift in Sources */,
 				ED02BF132B65A7F7003065DE /* Sizes.swift in Sources */,
@@ -351,8 +370,9 @@
 				ED5CB1582B79D8E800C336EC /* AudioManager.swift in Sources */,
 				ED5CB1562B79D11D00C336EC /* Constants.swift in Sources */,
 				ED5CB15B2B7AC1AE00C336EC /* AdManagerViewModel.swift in Sources */,
+				ED3775A92B9C0A1400BEF3D8 /* LocalMultiplayScreen.swift in Sources */,
 				ED02BF1F2B65E538003065DE /* LottieView.swift in Sources */,
-				ED02BF0F2B6591F7003065DE /* GameScreen.swift in Sources */,
+				ED02BF0F2B6591F7003065DE /* SinglePlayScreen.swift in Sources */,
 				ED02BF012B6591D7003065DE /* GuessTheOrderApp.swift in Sources */,
 				ED02BF262B66F119003065DE /* CounterView.swift in Sources */,
 			);
@@ -508,18 +528,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GuessTheOrder/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Sort The Fruits";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swap the Fruits";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,7 +547,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -543,18 +563,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GuessTheOrder/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Sort The Fruits";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swap the Fruits";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = ordozgoite.GuessTheOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,7 +582,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

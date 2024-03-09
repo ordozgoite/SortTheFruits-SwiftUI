@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @ObservedObject var gameVM: GameViewModel
+    @ObservedObject var gameVM: SinglePlayViewModel
     
     var body: some View {
         ZStack {
@@ -105,5 +105,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(gameVM: GameViewModel())
+    SettingsView(gameVM: SinglePlayViewModel())
 }

@@ -9,22 +9,30 @@ import SwiftUI
 
 struct CounterView: View {
     
-    @ObservedObject var gameManagerVM: GameManagerViewModel
     private let minSize = 32
     private let maxSize = 256
     
+    @Binding var correctCount: Int
+    let fruitsQuantity: Int
+    
     var body: some View {
-        Text(String(gameManagerVM.correctCount))
-            .foregroundStyle(.white)
-            .font(.system(size: counterSize()))
-            .fontWeight(.bold)
+        VStack {
+            Text("correct-string")
+                .foregroundStyle(.white)
+                .fontWeight(.semibold)
+            
+            Text(String(correctCount))
+                .foregroundStyle(.white)
+                .font(.system(size: counterSize()))
+                .fontWeight(.bold)
+        }
     }
     
     private func counterSize() -> CGFloat {
-        return CGFloat(minSize + (((maxSize - minSize) / gameManagerVM.fruitsOrder.count) * gameManagerVM.correctCount))
+        return CGFloat(minSize + (((maxSize - minSize) / fruitsQuantity) * correctCount))
     }
 }
 
 #Preview {
-    CounterView(gameManagerVM: GameManagerViewModel())
+    CounterView(correctCount: .constant(0), fruitsQuantity: 5)
 }

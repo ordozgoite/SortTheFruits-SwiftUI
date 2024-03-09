@@ -14,7 +14,7 @@ class AdCoordinator: NSObject, GADFullScreenContentDelegate {
     
     func loadAd() {
         GADInterstitialAd.load(
-            withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()
+            withAdUnitID: "ca-app-pub-6087487866138852/2530987463", request: GADRequest()
         ) { ad, error in
             if let error = error {
                 return print("Failed to load ad with error: \(error.localizedDescription)")

@@ -9,17 +9,17 @@ import SwiftUI
 import AudioToolbox
 import AVFoundation
 
-struct GameScreen: View {
+struct SinglePlayScreen: View {
     
     private let audioManager = AudioManager()
     private let adManager = AdManager()
-    @ObservedObject private var gameVM = GameViewModel()
+    @ObservedObject private var gameVM = SinglePlayViewModel()
     @ObservedObject private var gameManagerVM = GameManagerViewModel()
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Background(gameManagerVM: gameManagerVM)
+                Background(level: $gameManagerVM.level)
                 
                 Header()
                 
@@ -49,7 +49,7 @@ struct GameScreen: View {
         VStack {
             ZStack(alignment: .top) {
                 HStack {
-                    LevelView(gameManagerVM: gameManagerVM)
+                    LevelView(level: $gameManagerVM.level)
                     
                     Spacer()
                     
@@ -63,7 +63,7 @@ struct GameScreen: View {
                             gameVM.isSettingsViewDisplayed.toggle()
                         }
                 }
-                CounterView(gameManagerVM: gameManagerVM)
+                CounterView(correctCount: $gameManagerVM.correctCount, fruitsQuantity: gameManagerVM.fruitsOrder.count)
             }
             
             Spacer()
@@ -128,5 +128,5 @@ struct GameScreen: View {
 }
 
 #Preview {
-    GameScreen()
+    SinglePlayScreen()
 }

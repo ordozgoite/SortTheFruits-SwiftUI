@@ -15,7 +15,7 @@ struct LaunchScreen: View {
     
     var body: some View {
         if hasGameStarted {
-            GameScreen()
+            SinglePlayScreen()
         } else {
             ZStack {
                 Color.black.ignoresSafeArea()
